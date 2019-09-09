@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dom based XSS</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function dombaseFun(){
+        var value=document.getElementsByName('text1')[0].value;
+        document.getElementsByClassName('Etag')[0].innerHTML="<a href='" + value + "'>test link</a>";
+      }
+    </script>
+
+    <div class="Etag"></div>
+    <input type="text" name="text1" value="">
+    <input type="button" name="" value="write" onclick="dombaseFun();">
+  </body>
+</html>

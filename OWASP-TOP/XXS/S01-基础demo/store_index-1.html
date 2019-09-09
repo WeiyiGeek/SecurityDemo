@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>XSS test - HTML </title>
+  </head>
+  <body>
+<B>xss 代码注入 HTML demo(3种方式)</B>
+<script>alert('xss-alert');</script>
+<img src="0" onerror="confirm('xss-confirm');prompt('xss-prompt');">
+<iframe src="./input-2.html" width=200 height=200></iframe>
+  </body>
+</html>

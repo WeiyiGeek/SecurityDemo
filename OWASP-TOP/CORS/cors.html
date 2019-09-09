@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CORS请求演示页面</title>
+</head>
+<body>
+<div id="test"></div>
+<button onclick="getCors()">验证CORS页面请求</button>
+    <script>
+    function getCors()
+    {
+       var xhr=window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+        xhr.open("GET","http://10.2.14.208/CORS.php",true);
+        xhr.withCredentials =false;  //注意，由于我的服务器没有设置支持cookie，如果这个设置为true会导致请求失败（坑呀）
+        xhr.send();
+        xhr.onreadystatechange=function(){
+            if (xhr.readyState == 4 && xhr.status == 200){
+                var data = JSON.parse(xhr.responseText);  //将json解析为对象
+                document.getElementById("test").innerHTML=xhr.responseText;
+                console.info("CORS请求成功");
+                console.info("name:"+data[0].name);
+                console.info("site:"+data[0].site);
+            }
+        }
+    }
+    </script>
+</body>
+</html>

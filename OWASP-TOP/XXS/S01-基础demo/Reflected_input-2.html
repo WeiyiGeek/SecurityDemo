@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>xss submit demo</title>
+  </head>
+  <body>
+    <1script>alert('zzz');</script>
+    <form class="" action="input-2.php" method="post">
+      <b>请输入名字:</b><input type="text" name="username" value="xss-test"></input><br/>
+      <b>请输入密码:</b><input type="password" name="userpass" value="xss-pass"></input><br/>
+      <input type="button" name="" value="提交"> &nbsp;&nbsp;&nbsp;<input type="reset" name="" value="重置">
+    </form>
+  </body>
+</html>
