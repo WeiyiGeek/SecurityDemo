@@ -1,8 +1,10 @@
 action=https://weiyigeek.github.io
 action_url=https://weiyigeek.github.io
 allinurl:https://weiyigeek.github.io
+redirect:https://weiyigeek.github.io
 backurl=https://weiyigeek.github.io
-burl=https://weiyigeek.github.io
+burl=https://weiyigeek.github.io、
+s_url=https://weiyigeek.github.io、
 callback_url=https://weiyigeek.github.io
 /cgi-bin/redirect.cgi?https://weiyigeek.github.io
 checkout_url=https://weiyigeek.github.io
